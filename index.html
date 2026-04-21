@@ -1,244 +1,60 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anna Heaner</title>
-  <meta name="description" content="Travel and people journal." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root, [data-theme="light"] {
-      --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
-      --text-sm: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
-      --text-base: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
-      --text-lg: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
-      --text-xl: clamp(1.5rem, 1.2rem + 1.25vw, 2.25rem);
-      --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
-      --text-3xl: clamp(2.5rem, 1rem + 4vw, 5rem);
-      --space-2:.5rem; --space-3:.75rem; --space-4:1rem; --space-5:1.25rem; --space-6:1.5rem; --space-8:2rem; --space-10:2.5rem; --space-12:3rem; --space-16:4rem;
-      --color-bg:#f7f4ef;
-      --color-surface:#fbf9f5;
-      --color-surface-2:#efe8df;
-      --color-border:#d6cec3;
-      --color-text:#241f19;
-      --color-text-muted:#72675b;
-      --color-text-inverse:#fcfaf7;
-      --color-primary:#5b7fa3;
-      --color-primary-hover:#496b8d;
-      --color-highlight:#e7eef6;
-      --shadow-sm:0 1px 2px rgba(32,22,12,.06);
-      --shadow-md:0 14px 40px rgba(32,22,12,.1);
-      --radius-md:.75rem; --radius-lg:1.1rem; --radius-xl:1.5rem; --radius-full:9999px;
-      --font-display:'Cormorant Garamond', Georgia, serif;
-      --font-body:'Manrope', Arial, sans-serif;
-    }
-    [data-theme="dark"] {
-      --color-bg:#181512;
-      --color-surface:#211d19;
-      --color-surface-2:#2a241f;
-      --color-border:#433b33;
-      --color-text:#f0e8dc;
-      --color-text-muted:#c4b8a8;
-      --color-text-inverse:#181512;
-      --color-primary:#8fb0cf;
-      --color-primary-hover:#a8c2dc;
-      --color-highlight:#243342;
-      --shadow-sm:0 1px 2px rgba(0,0,0,.2);
-      --shadow-md:0 14px 40px rgba(0,0,0,.35);
-    }
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:var(--font-body);font-size:var(--text-base);line-height:1.65;background:var(--color-bg);color:var(--color-text)}
-    img{display:block;max-width:100%;height:auto}
-    a{color:inherit;text-decoration:none}
-    button{font:inherit;background:none;border:none;cursor:pointer}
-    .container{width:min(1120px,calc(100% - 2rem));margin-inline:auto}
-    .site-header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--color-bg) 86%, transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--color-border)}
-    .header-row{display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);padding:var(--space-4) 0}
-    .brand{display:flex;align-items:center;gap:var(--space-3)}
-    .brand svg{width:40px;height:40px;color:var(--color-primary)}
-    .brand-name{font-family:var(--font-display);font-size:var(--text-xl)}
-    .nav{display:flex;gap:var(--space-4);flex-wrap:wrap}
-    .nav a{font-size:var(--text-sm);color:var(--color-text-muted)}
-    .nav a:hover{color:var(--color-text)}
-    .toggle{display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--color-border);border-radius:var(--radius-full);background:var(--color-surface)}
-    .hero{padding:clamp(3.5rem,8vw,7rem) 0}
-    .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:var(--space-8);align-items:center}
-    .eyebrow{font-size:var(--text-xs);letter-spacing:.16em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:var(--space-4)}
-    h1,h2,h3{font-family:var(--font-display);line-height:1.05;font-weight:600}
-    h1{font-size:var(--text-3xl);max-width:10ch}
-    h2{font-size:var(--text-2xl)}
-    h3{font-size:var(--text-xl)}
-    .hero p,.section-copy{color:var(--color-text-muted);max-width:60ch;margin-top:var(--space-5)}
-    .hero-media img{border-radius:var(--radius-xl);box-shadow:var(--shadow-md);aspect-ratio:4/5;object-fit:cover;border:1px solid var(--color-border)}
-    .actions{display:flex;gap:var(--space-3);flex-wrap:wrap;margin-top:var(--space-6)}
-    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.9rem 1.25rem;border-radius:var(--radius-full);font-size:var(--text-sm);font-weight:700}
-    .btn-primary{background:var(--color-primary);color:var(--color-text-inverse)}
-    .btn-primary:hover{background:var(--color-primary-hover)}
-    .btn-secondary{border:1px solid var(--color-border);background:var(--color-surface)}
-    section{padding:var(--space-12) 0}
-    .section-head{display:flex;justify-content:space-between;gap:var(--space-4);align-items:end;margin-bottom:var(--space-8)}
-    .stories{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--space-5)}
-    .story{display:flex;flex-direction:column;background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-sm)}
-    .story img{aspect-ratio:4/3;object-fit:cover}
-    .story-body{padding:var(--space-5)}
-    .meta{font-size:var(--text-xs);letter-spacing:.15em;text-transform:uppercase;color:var(--color-text-muted);margin-bottom:var(--space-3)}
-    .story p{color:var(--color-text-muted)}
-    .gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--space-4)}
-    .gallery button{border-radius:var(--radius-md);overflow:hidden;border:1px solid var(--color-border);background:var(--color-surface)}
-    .gallery img{aspect-ratio:1/1;object-fit:cover;width:100%}
-    .archive{background:var(--color-surface-2);border-radius:var(--radius-xl);padding:var(--space-8);border:1px solid var(--color-border)}
-    .archive ul{list-style:none;display:grid;gap:var(--space-3);margin-top:var(--space-5)}
-    .archive a{color:var(--color-primary);font-weight:700}
-    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.82);display:none;align-items:center;justify-content:center;padding:2rem;z-index:50}
-    .lightbox.open{display:flex}
-    .lightbox-inner{max-width:min(1100px,100%);max-height:100%;position:relative}
-    .lightbox img{max-height:82vh;border-radius:var(--radius-lg)}
-    .lightbox-close{position:absolute;top:-1rem;right:-.25rem;width:44px;height:44px;border-radius:var(--radius-full);background:white;color:black;font-weight:800}
-    .site-footer{padding:var(--space-12) 0;border-top:1px solid var(--color-border);margin-top:var(--space-8)}
-    .footer-row{display:flex;justify-content:space-between;gap:var(--space-4);align-items:center}
-    @media (max-width: 900px){.hero-grid,.stories,.gallery,.footer-row{grid-template-columns:1fr;display:grid} .header-row{flex-direction:column;align-items:flex-start}}
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Anna Heaner</title>
+<meta name="description" content="Travel notes and photographs." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root,[data-theme="light"]{--bg:#eef5fb;--surface:#f8fbfe;--surface2:#e6f0fa;--border:#cddced;--text:#203040;--muted:#58708a;--primary:#4f79a8;--primary2:#335c88;--shadow:0 14px 40px rgba(47,78,110,.12);--radius:1.2rem;--font1:'Cormorant Garamond',serif;--font2:'Manrope',sans-serif}
+[data-theme="dark"]{--bg:#11181f;--surface:#16212b;--surface2:#1d2a36;--border:#243544;--text:#e9f1f7;--muted:#a8bfd2;--primary:#7ea7cf;--primary2:#9cbedd;--shadow:0 14px 40px rgba(0,0,0,.35)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:var(--font2);background:var(--bg);color:var(--text);line-height:1.65}img{display:block;width:100%;height:auto}a{color:inherit;text-decoration:none}button{font:inherit;border:0;background:none;cursor:pointer}
+.container{width:min(1120px,calc(100% - 2rem));margin:auto}
+.header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%, transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.headrow{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1rem 0;flex-wrap:wrap}
+.brand{display:flex;gap:.75rem;align-items:center}.mark{width:40px;height:40px;color:var(--primary)}.brand h1{font-family:var(--font1);font-size:2rem;margin:0;line-height:1}.sub{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.nav{display:flex;gap:1rem;flex-wrap:wrap}.nav a{color:var(--muted);font-size:.92rem}.nav a:hover{color:var(--text)}.toggle{width:44px;height:44px;border:1px solid var(--border);border-radius:999px;background:var(--surface);color:var(--text)}
+.hero{padding:4rem 0 2rem}.grid{display:grid;grid-template-columns:1.05fr .95fr;gap:2rem;align-items:center}h2{font-family:var(--font1);font-size:clamp(2.4rem,5vw,4.8rem);line-height:1.02;margin:0;max-width:10ch}.hero p,.copy{color:var(--muted);max-width:58ch}
+.cta{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.5rem}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:.85rem 1.2rem;border-radius:999px;font-weight:700;font-size:.92rem}.primary{background:var(--primary);color:white}.primary:hover{background:var(--primary2)}.secondary{background:var(--surface);border:1px solid var(--border)}
+.panel{background:linear-gradient(180deg,var(--surface),var(--surface2));border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+.panel img{aspect-ratio:4/5;object-fit:cover}
+.section{padding:2.5rem 0}.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:1rem;margin-bottom:1.25rem;flex-wrap:wrap}.eyebrow{font-size:.75rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}h3{font-family:var(--font1);font-size:clamp(1.8rem,3vw,2.8rem);margin:.2rem 0 0}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}.card{background:var(--surface);border:1px solid var(--border);border-radius:1rem;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.04)}.card img{aspect-ratio:4/3;object-fit:cover}.card .body{padding:1rem 1rem 1.2rem}.meta{font-size:.74rem;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem}
+.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem}.tile{padding:0;border-radius:.9rem;overflow:hidden;border:1px solid var(--border);background:var(--surface)}.tile img{aspect-ratio:1/1;object-fit:cover}
+.archive{background:var(--surface2);border:1px solid var(--border);border-radius:1.2rem;padding:1.2rem 1.2rem .8rem}.archive ul{list-style:none;padding:0;margin:.8rem 0 0;display:grid;gap:.65rem}.archive a{color:var(--primary);font-weight:700}
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;place-items:center;padding:1.5rem;z-index:30}.lightbox.open{display:grid}.lightbox img{max-width:min(1100px,100%);max-height:82vh;border-radius:1rem}.close{position:absolute;top:1rem;right:1rem;width:44px;height:44px;border-radius:999px;background:white;color:#000;font-size:1.3rem}
+footer{padding:2rem 0 3rem;border-top:1px solid var(--border);margin-top:2rem}
+@media (max-width:900px){.grid,.cards,.gallery{grid-template-columns:1fr}.headrow{align-items:flex-start}}
+</style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-row">
-      <div class="brand">
-        <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Anna Heaner logo"><path d="M10 50L27 14L32 24L37 14L54 50" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 36H46" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
-        <div><div class="brand-name">Anna Heaner</div><div class="eyebrow" style="margin:0;color:var(--color-text-muted)">Travel journal</div></div>
-      </div>
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="#stories">Stories</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#archive">Archive</a>
-      </nav>
-      <button class="toggle" data-theme-toggle aria-label="Switch theme">◐</button>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <div class="eyebrow">Notes from the road</div>
-          <h1>Travel, people, and a few favorite places.</h1>
-          <p>A quiet collection of photographs and notes from Switzerland, Ireland, France, Italy, and the North Carolina coast.</p>
-          <div class="actions">
-            <a class="btn btn-primary" href="#stories">Browse stories</a>
-            <a class="btn btn-secondary" href="#gallery">Open gallery</a>
-          </div>
-        </div>
-        <div class="hero-media">
-          <img src="assets/images/Swiss-image-1.jpg" alt="Swiss alpine landscape" width="900" height="1100" />
-        </div>
-      </div>
-    </section>
-
-    <section id="stories">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <div class="eyebrow">Stories</div>
-            <h2>Recent notes</h2>
-          </div>
-          <p class="section-copy">A broader selection of photographs from the archive, arranged so more of the images are available on the main page.</p>
-        </div>
-        <div class="stories">
-          <article class="story"><img src="assets/images/IMG_2040.jpeg" alt="Image for Wrightsville Beach" loading="lazy" width="800" height="600" /><div class="story-body"><div class="meta">Archive feature</div><h3>Wrightsville Beach</h3><p>The light, the water, and the easy pace of the coast.</p></div></article>
-          <article class="story"><img src="assets/images/DSC03538.jpeg" alt="Image for Ireland" loading="lazy" width="800" height="600" /><div class="story-body"><div class="meta">Archive feature</div><h3>Ireland</h3><p>A slower landscape with room to breathe and wander.</p></div></article>
-          <article class="story"><img src="assets/images/IMG_7730.jpeg" alt="Image for People" loading="lazy" width="800" height="600" /><div class="story-body"><div class="meta">Archive feature</div><h3>People</h3><p>Portraits and encounters from the road.</p></div></article>
-          <article class="story"><img src="assets/images/IMG_8364.jpeg" alt="Image for North of France" loading="lazy" width="800" height="600" /><div class="story-body"><div class="meta">Archive feature</div><h3>North of France</h3><p>A quiet stretch of travel with wide skies and open paths.</p></div></article>
-          <article class="story"><img src="assets/images/IMG_0895.jpeg" alt="Image for Portugal" loading="lazy" width="800" height="600" /><div class="story-body"><div class="meta">Archive feature</div><h3>Portugal</h3><p>Small moments from a warmer edge of the journey.</p></div></article>
-          <article class="story"><img src="assets/images/IMG_7729.jpeg" alt="Image for Italy" loading="lazy" width="800" height="600" /><div class="story-body"><div class="meta">Archive feature</div><h3>Italy</h3><p>A place of architecture, food, and long afternoons.</p></div></article>
-          <article class="story"><img src="assets/images/IMG_6267.jpeg" alt="Image for Switzerland" loading="lazy" width="800" height="600" /><div class="story-body"><div class="meta">Archive feature</div><h3>Switzerland</h3><p>Mountain air, green hills, and a view that stays with you.</p></div></article>
-          <article class="story"><img src="assets/images/IMG_0893.jpeg" alt="Image for South of France" loading="lazy" width="800" height="600" /><div class="story-body"><div class="meta">Archive feature</div><h3>South of France</h3><p>Soft colors and the pull of the coast.</p></div></article>
-          <article class="story"><img src="assets/images/IMG_8381.jpeg" alt="Image for Notes" loading="lazy" width="800" height="600" /><div class="story-body"><div class="meta">Archive feature</div><h3>Notes</h3><p>A few more pages from the journal.</p></div></article>
-        </div>
-      </div>
-    </section>
-
-    <section id="gallery">
-      <div class="container">
-        <div class="section-head">
-          <div><div class="eyebrow">Gallery</div><h2>Photographs</h2></div>
-          <p class="section-copy">More of the archive is now available directly on the page.</p>
-        </div>
-        <div class="gallery">
-          <button class="gallery-item" data-image="assets/images/Swiss-image-1.jpg" aria-label="Open image Swiss-image-1.jpg"><img src="assets/images/Swiss-image-1.jpg" alt="Photograph from the journal" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/IMG_2040.jpeg" aria-label="Open image IMG_2040.jpeg"><img src="assets/images/IMG_2040.jpeg" alt="Photograph from the journal" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/DSC03538.jpeg" aria-label="Open image DSC03538.jpeg"><img src="assets/images/DSC03538.jpeg" alt="Photograph from the journal" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/IMG_7730.jpeg" aria-label="Open image IMG_7730.jpeg"><img src="assets/images/IMG_7730.jpeg" alt="Photograph from the journal" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/IMG_8364.jpeg" aria-label="Open image IMG_8364.jpeg"><img src="assets/images/IMG_8364.jpeg" alt="Photograph from the journal" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/IMG_0895.jpeg" aria-label="Open image IMG_0895.jpeg"><img src="assets/images/IMG_0895.jpeg" alt="Photograph from the journal" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/IMG_7729.jpeg" aria-label="Open image IMG_7729.jpeg"><img src="assets/images/IMG_7729.jpeg" alt="Photograph from the journal" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/IMG_6267.jpeg" aria-label="Open image IMG_6267.jpeg"><img src="assets/images/IMG_6267.jpeg" alt="Photograph from the journal" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/IMG_0893.jpeg" aria-label="Open image IMG_0893.jpeg"><img src="assets/images/IMG_0893.jpeg" alt="Photograph from the journal" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/IMG_8381.jpeg" aria-label="Open image IMG_8381.jpeg"><img src="assets/images/IMG_8381.jpeg" alt="Photograph from the journal" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/IMG_8348.jpeg" aria-label="Open image IMG_8348.jpeg"><img src="assets/images/IMG_8348.jpeg" alt="Photograph from the journal" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/IMG_8355.jpeg" aria-label="Open image IMG_8355.jpeg"><img src="assets/images/IMG_8355.jpeg" alt="Photograph from the journal" loading="lazy" width="600" height="600" /></button>
-        </div>
-      </div>
-    </section>
-
-    <section id="archive">
-      <div class="container archive">
-        <div class="eyebrow">Archive links</div>
-        <h2>From the journal</h2>
-        <ul>
-          <li><a href="#" target="_blank" rel="noopener noreferrer">Wrightsville Beach</a></li>
-          <li><a href="#" target="_blank" rel="noopener noreferrer">Ireland</a></li>
-          <li><a href="#" target="_blank" rel="noopener noreferrer">People</a></li>
-        </ul>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-row">
-      <div><strong>Anna Heaner</strong><div class="eyebrow" style="margin-top:.4rem">Travel journal</div></div>
-      <a class="btn btn-secondary" href="#top">Back to top</a>
-    </div>
-  </footer>
-
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <div class="lightbox-inner">
-      <button class="lightbox-close" id="lightboxClose" aria-label="Close image viewer">×</button>
-      <img id="lightboxImage" src="" alt="Expanded gallery image" />
-    </div>
-  </div>
-
-  <script>
-    (function () {
-      const root = document.documentElement;
-      const toggle = document.querySelector('[data-theme-toggle]');
-      let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      root.setAttribute('data-theme', theme);
-      toggle.addEventListener('click', () => {
-        theme = theme === 'dark' ? 'light' : 'dark';
-        root.setAttribute('data-theme', theme);
-      });
-
-      const lightbox = document.getElementById('lightbox');
-      const lightboxImage = document.getElementById('lightboxImage');
-      const closeBtn = document.getElementById('lightboxClose');
-      document.querySelectorAll('.gallery-item').forEach(btn => {
-        btn.addEventListener('click', () => {
-          lightboxImage.src = btn.dataset.image;
-          lightbox.classList.add('open');
-          lightbox.setAttribute('aria-hidden', 'false');
-        });
-      });
-      closeBtn.addEventListener('click', () => {
-        lightbox.classList.remove('open');
-        lightbox.setAttribute('aria-hidden', 'true');
-        lightboxImage.src = '';
-      });
-      lightbox.addEventListener('click', (e) => {
-        if (e.target === lightbox) closeBtn.click();
-      });
-    }());
-  </script>
+<header class="header"><div class="container headrow"><div class="brand"><svg class="mark" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 50L27 14L32 24L37 14L54 50" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 36H46" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg><div><h1>Anna Heaner</h1><div class="sub">Travel journal</div></div></div><nav class="nav"><a href="#stories">Stories</a><a href="#gallery">Gallery</a><a href="#archive">Archive</a></nav><button class="toggle" data-theme-toggle aria-label="Switch theme">◐</button></div></header>
+<main>
+<section class="hero"><div class="container grid"><div><div class="eyebrow">Notes from the road</div><h2>Travel, people, and places.</h2><p>A quiet collection of photographs and notes from Switzerland, Ireland, France, Italy, and the North Carolina coast.</p><div class="cta"><a class="btn primary" href="#stories">Browse stories</a><a class="btn secondary" href="#gallery">Open gallery</a></div></div><div class="panel"><img src="assets/images/Swiss-image-1.jpg" alt="Swiss alpine landscape" width="900" height="1100"></div></div></section>
+<section id="stories" class="section"><div class="container"><div class="sectionhead"><div><div class="eyebrow">Stories</div><h3>Recent notes</h3></div><div class="copy">A broader selection of photographs from the archive, arranged so more of the images are available on the main page.</div></div><div class="cards"><article class="card"><img src="assets/images/095FC020-ADC8-41AE-B4B7-5F7A19C91E5F.jpg" alt="Wrightsville Beach"><div class="body"><div class="meta">Travel note</div><h3>Wrightsville Beach</h3><p>The light, the water, and the easy pace of the coast.</p></div></article><article class="card"><img src="assets/images/16504BF4-4D29-435A-A0D1-D2FD3955894C.jpg" alt="Ireland"><div class="body"><div class="meta">Travel note</div><h3>Ireland</h3><p>A slower landscape with room to breathe and wander.</p></div></article><article class="card"><img src="assets/images/25F82854-19CB-43B4-821B-73055C111A2E.jpg" alt="People"><div class="body"><div class="meta">Travel note</div><h3>People</h3><p>Portraits and encounters from the road.</p></div></article><article class="card"><img src="assets/images/26A49579-F959-4232-8E47-56E8B8EB155A.jpg" alt="North of France"><div class="body"><div class="meta">Travel note</div><h3>North of France</h3><p>A quiet stretch of travel with wide skies and open paths.</p></div></article><article class="card"><img src="assets/images/336DB078-9910-4AB6-91F5-FB7A38B3EBD0.jpg" alt="Portugal"><div class="body"><div class="meta">Travel note</div><h3>Portugal</h3><p>Small moments from a warmer edge of the journey.</p></div></article><article class="card"><img src="assets/images/440F2944-43A6-4366-BD0C-87A4A252F8B9.jpg" alt="Italy"><div class="body"><div class="meta">Travel note</div><h3>Italy</h3><p>A place of architecture, food, and long afternoons.</p></div></article><article class="card"><img src="assets/images/49203A1F-51A2-4672-83A7-B4838788C8B8.jpg" alt="Switzerland"><div class="body"><div class="meta">Travel note</div><h3>Switzerland</h3><p>Mountain air, green hills, and a view that stays with you.</p></div></article><article class="card"><img src="assets/images/4FC90AB3-2F85-4D02-B773-21888398715F.jpg" alt="South of France"><div class="body"><div class="meta">Travel note</div><h3>South of France</h3><p>Soft colors and the pull of the coast.</p></div></article></div></div></section>
+<section id="gallery" class="section"><div class="container"><div class="sectionhead"><div><div class="eyebrow">Gallery</div><h3>Photographs</h3></div><div class="copy">More of the archive is now available directly on the page.</div></div><div class="gallery"><button class="tile" data-image="assets/images/095FC020-ADC8-41AE-B4B7-5F7A19C91E5F.jpg" aria-label="Open 095FC020-ADC8-41AE-B4B7-5F7A19C91E5F.jpg"><img src="assets/images/095FC020-ADC8-41AE-B4B7-5F7A19C91E5F.jpg" alt="Photo from the journal"></button>
+<button class="tile" data-image="assets/images/16504BF4-4D29-435A-A0D1-D2FD3955894C.jpg" aria-label="Open 16504BF4-4D29-435A-A0D1-D2FD3955894C.jpg"><img src="assets/images/16504BF4-4D29-435A-A0D1-D2FD3955894C.jpg" alt="Photo from the journal"></button>
+<button class="tile" data-image="assets/images/25F82854-19CB-43B4-821B-73055C111A2E.jpg" aria-label="Open 25F82854-19CB-43B4-821B-73055C111A2E.jpg"><img src="assets/images/25F82854-19CB-43B4-821B-73055C111A2E.jpg" alt="Photo from the journal"></button>
+<button class="tile" data-image="assets/images/26A49579-F959-4232-8E47-56E8B8EB155A.jpg" aria-label="Open 26A49579-F959-4232-8E47-56E8B8EB155A.jpg"><img src="assets/images/26A49579-F959-4232-8E47-56E8B8EB155A.jpg" alt="Photo from the journal"></button>
+<button class="tile" data-image="assets/images/336DB078-9910-4AB6-91F5-FB7A38B3EBD0.jpg" aria-label="Open 336DB078-9910-4AB6-91F5-FB7A38B3EBD0.jpg"><img src="assets/images/336DB078-9910-4AB6-91F5-FB7A38B3EBD0.jpg" alt="Photo from the journal"></button>
+<button class="tile" data-image="assets/images/440F2944-43A6-4366-BD0C-87A4A252F8B9.jpg" aria-label="Open 440F2944-43A6-4366-BD0C-87A4A252F8B9.jpg"><img src="assets/images/440F2944-43A6-4366-BD0C-87A4A252F8B9.jpg" alt="Photo from the journal"></button>
+<button class="tile" data-image="assets/images/49203A1F-51A2-4672-83A7-B4838788C8B8.jpg" aria-label="Open 49203A1F-51A2-4672-83A7-B4838788C8B8.jpg"><img src="assets/images/49203A1F-51A2-4672-83A7-B4838788C8B8.jpg" alt="Photo from the journal"></button>
+<button class="tile" data-image="assets/images/4FC90AB3-2F85-4D02-B773-21888398715F.jpg" aria-label="Open 4FC90AB3-2F85-4D02-B773-21888398715F.jpg"><img src="assets/images/4FC90AB3-2F85-4D02-B773-21888398715F.jpg" alt="Photo from the journal"></button>
+<button class="tile" data-image="assets/images/53B0A028-2AC1-436C-BD02-9E6DBA658594.jpg" aria-label="Open 53B0A028-2AC1-436C-BD02-9E6DBA658594.jpg"><img src="assets/images/53B0A028-2AC1-436C-BD02-9E6DBA658594.jpg" alt="Photo from the journal"></button>
+<button class="tile" data-image="assets/images/55A2789C-A540-49FB-AFEE-25D2E9270A9B.jpg" aria-label="Open 55A2789C-A540-49FB-AFEE-25D2E9270A9B.jpg"><img src="assets/images/55A2789C-A540-49FB-AFEE-25D2E9270A9B.jpg" alt="Photo from the journal"></button>
+<button class="tile" data-image="assets/images/597E8DDF-79B2-4069-9D22-EC5141025DC8.jpg" aria-label="Open 597E8DDF-79B2-4069-9D22-EC5141025DC8.jpg"><img src="assets/images/597E8DDF-79B2-4069-9D22-EC5141025DC8.jpg" alt="Photo from the journal"></button>
+<button class="tile" data-image="assets/images/6FF4012F-F5FB-47ED-92E2-B51AA69889D4.jpg" aria-label="Open 6FF4012F-F5FB-47ED-92E2-B51AA69889D4.jpg"><img src="assets/images/6FF4012F-F5FB-47ED-92E2-B51AA69889D4.jpg" alt="Photo from the journal"></button>
+<button class="tile" data-image="assets/images/73A4F566-6655-4856-9EAB-43BAC22CA8E7.jpg" aria-label="Open 73A4F566-6655-4856-9EAB-43BAC22CA8E7.jpg"><img src="assets/images/73A4F566-6655-4856-9EAB-43BAC22CA8E7.jpg" alt="Photo from the journal"></button>
+<button class="tile" data-image="assets/images/8E2F1F6D-8C5D-479D-B94F-01111B168539.jpg" aria-label="Open 8E2F1F6D-8C5D-479D-B94F-01111B168539.jpg"><img src="assets/images/8E2F1F6D-8C5D-479D-B94F-01111B168539.jpg" alt="Photo from the journal"></button>
+<button class="tile" data-image="assets/images/90E47371-44A8-45FB-B0F4-6486262C4304.jpg" aria-label="Open 90E47371-44A8-45FB-B0F4-6486262C4304.jpg"><img src="assets/images/90E47371-44A8-45FB-B0F4-6486262C4304.jpg" alt="Photo from the journal"></button>
+<button class="tile" data-image="assets/images/9D8A317B-0CE6-4602-976C-8F697DC6B3D8.jpg" aria-label="Open 9D8A317B-0CE6-4602-976C-8F697DC6B3D8.jpg"><img src="assets/images/9D8A317B-0CE6-4602-976C-8F697DC6B3D8.jpg" alt="Photo from the journal"></button></div></div></section>
+<section id="archive" class="section"><div class="container archive"><div class="eyebrow">Archive links</div><h3>From the journal</h3><ul><li><a href="#">Wrightsville Beach</a></li><li><a href="#">Ireland</a></li><li><a href="#">People</a></li></ul></div></section>
+</main>
+<footer><div class="container"><strong>Anna Heaner</strong><div class="sub" style="margin-top:.35rem">Travel journal</div></div></footer>
+<div class="lightbox" id="lightbox"><button class="close" id="close">×</button><img id="lightboxImage" src="" alt="Expanded image"></div>
+<script>(()=>{const r=document.documentElement,t=document.querySelector('[data-theme-toggle]');let theme=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';r.setAttribute('data-theme',theme);t.onclick=()=>{theme=theme==='dark'?'light':'dark';r.setAttribute('data-theme',theme)};const l=document.getElementById('lightbox'),i=document.getElementById('lightboxImage'),c=document.getElementById('close');document.querySelectorAll('.tile').forEach(b=>b.onclick=()=>{i.src=b.dataset.image;l.classList.add('open')});c.onclick=()=>{l.classList.remove('open');i.src=''};l.onclick=e=>{if(e.target===l)c.onclick()};})();</script>
 </body>
 </html>
