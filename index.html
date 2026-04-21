@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Anna Heaner</title>
-  <meta name="description" content="A public-facing travel and people journal rebuilt from Anna Heaner’s Blogger archive." />
+  <meta name="description" content="Travel and people journal." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -18,12 +18,36 @@
       --text-2xl: clamp(2rem, 1.2rem + 2.5vw, 3.5rem);
       --text-3xl: clamp(2.5rem, 1rem + 4vw, 5rem);
       --space-2:.5rem; --space-3:.75rem; --space-4:1rem; --space-5:1.25rem; --space-6:1.5rem; --space-8:2rem; --space-10:2.5rem; --space-12:3rem; --space-16:4rem;
-      --color-bg:#f7f4ef; --color-surface:#fbf9f5; --color-surface-2:#efe8df; --color-border:#d6cec3; --color-text:#241f19; --color-text-muted:#72675b; --color-text-inverse:#fcfaf7; --color-primary:#355c63; --color-primary-hover:#28484e; --color-highlight:#dde8ea;
-      --shadow-sm:0 1px 2px rgba(32,22,12,.06); --shadow-md:0 14px 40px rgba(32,22,12,.1);
+      --color-bg:#f7f4ef;
+      --color-surface:#fbf9f5;
+      --color-surface-2:#efe8df;
+      --color-border:#d6cec3;
+      --color-text:#241f19;
+      --color-text-muted:#72675b;
+      --color-text-inverse:#fcfaf7;
+      --color-primary:#5b7fa3;
+      --color-primary-hover:#496b8d;
+      --color-highlight:#e7eef6;
+      --shadow-sm:0 1px 2px rgba(32,22,12,.06);
+      --shadow-md:0 14px 40px rgba(32,22,12,.1);
       --radius-md:.75rem; --radius-lg:1.1rem; --radius-xl:1.5rem; --radius-full:9999px;
-      --font-display:'Cormorant Garamond', Georgia, serif; --font-body:'Manrope', Arial, sans-serif;
+      --font-display:'Cormorant Garamond', Georgia, serif;
+      --font-body:'Manrope', Arial, sans-serif;
     }
-    [data-theme="dark"] { --color-bg:#181512; --color-surface:#211d19; --color-surface-2:#2a241f; --color-border:#433b33; --color-text:#f0e8dc; --color-text-muted:#c4b8a8; --color-text-inverse:#181512; --color-primary:#8db0b5; --color-primary-hover:#a8c3c7; --color-highlight:#25343a; --shadow-sm:0 1px 2px rgba(0,0,0,.2); --shadow-md:0 14px 40px rgba(0,0,0,.35); }
+    [data-theme="dark"] {
+      --color-bg:#181512;
+      --color-surface:#211d19;
+      --color-surface-2:#2a241f;
+      --color-border:#433b33;
+      --color-text:#f0e8dc;
+      --color-text-muted:#c4b8a8;
+      --color-text-inverse:#181512;
+      --color-primary:#8fb0cf;
+      --color-primary-hover:#a8c2dc;
+      --color-highlight:#243342;
+      --shadow-sm:0 1px 2px rgba(0,0,0,.2);
+      --shadow-md:0 14px 40px rgba(0,0,0,.35);
+    }
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{font-family:var(--font-body);font-size:var(--text-base);line-height:1.65;background:var(--color-bg);color:var(--color-text)}
@@ -83,7 +107,7 @@
     <div class="container header-row">
       <div class="brand">
         <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Anna Heaner logo"><path d="M10 50L27 14L32 24L37 14L54 50" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/><path d="M18 36H46" stroke="currentColor" stroke-width="4" stroke-linecap="round"/></svg>
-        <div><div class="brand-name">Anna Heaner</div><div class="eyebrow" style="margin:0;color:var(--color-text-muted)">Travel and people journal</div></div>
+        <div><div class="brand-name">Anna Heaner</div><div class="eyebrow" style="margin:0;color:var(--color-text-muted)">Travel journal</div></div>
       </div>
       <nav class="nav" aria-label="Primary navigation">
         <a href="#stories">Stories</a>
@@ -98,16 +122,16 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="eyebrow">Public-facing rebuilt website</div>
-          <h1>Travel stories, portraits, and places in a format people can actually explore.</h1>
-          <p>This version is designed to be public, visual, and interactive, with story cards, a tappable gallery, direct links back to source posts, and local image assets ready for GitHub and Vercel deployment.</p>
+          <div class="eyebrow">Notes from the road</div>
+          <h1>Travel, people, and a few favorite places.</h1>
+          <p>A quiet collection of photographs and notes from Switzerland, Ireland, France, Italy, and the North Carolina coast.</p>
           <div class="actions">
             <a class="btn btn-primary" href="#stories">Browse stories</a>
             <a class="btn btn-secondary" href="#gallery">Open gallery</a>
           </div>
         </div>
         <div class="hero-media">
-          <img src="assets/images/Swiss-image-1.jpg" alt="Featured image from Anna Heaner archive" loading="eager" width="900" height="1100" />
+          <img src="assets/images/Swiss-image-1.jpg" alt="Swiss alpine landscape" width="900" height="1100" />
         </div>
       </div>
     </section>
@@ -117,20 +141,20 @@
         <div class="section-head">
           <div>
             <div class="eyebrow">Stories</div>
-            <h2>Featured writing</h2>
+            <h2>Recent notes</h2>
           </div>
-          <p class="section-copy">Pulled from discovered archive content and turned into a cleaner, easier-to-scan front page.</p>
+          <p class="section-copy">A broader selection of photographs from the archive, arranged so more of the images are available on the main page.</p>
         </div>
         <div class="stories">
-          <article class="story"><img src="assets/images/Swiss-image-1.jpg" alt="Image for ANNA HEANER : Portugal" loading="lazy" width="800" height="600" /><div class="story-body"><div class="meta">Archive feature</div><h3>ANNA HEANER : Portugal</h3><p>ANNA HEANER : Portugal Portugal Newer Post Older Post Home Portfolio North of France People Portugal Italy Switzerland South of France Wrightsville Beach ‘25 Wrightsville Beach ‘26 Ireland For bookings and inquiries please contact 2001annamarie@gmail.com Name Email *...</p><div class="actions" style="margin-top:1rem"><a class="btn btn-secondary" href="https://annaheaner.blogspot.com/2024/04/portugal.html" target="_blank" rel="noopener noreferrer">Open original post</a></div></div></article>
-          <article class="story"><img src="assets/images/Swiss-image-1.jpg" alt="Image for ANNA HEANER : North of France" loading="lazy" width="800" height="600" /><div class="story-body"><div class="meta">Archive feature</div><h3>ANNA HEANER : North of France</h3><p>ANNA HEANER : North of France North of France Newer Post Home Portfolio North of France People Portugal Italy Switzerland South of France Wrightsville Beach ‘25 Wrightsville Beach ‘26 Ireland For bookings and inquiries please contact 2001annamarie@gmail.com Name...</p><div class="actions" style="margin-top:1rem"><a class="btn btn-secondary" href="https://annaheaner.blogspot.com/2024/04/west-of-france.html" target="_blank" rel="noopener noreferrer">Open original post</a></div></div></article>
-          <article class="story"><img src="assets/images/Swiss-image-1.jpg" alt="Image for ANNA HEANER : Italy" loading="lazy" width="800" height="600" /><div class="story-body"><div class="meta">Archive feature</div><h3>ANNA HEANER : Italy</h3><p>ANNA HEANER : Italy Italy Newer Post Older Post Home Portfolio North of France People Portugal Italy Switzerland South of France Wrightsville Beach ‘25 Wrightsville Beach ‘26 Ireland For bookings and inquiries please contact 2001annamarie@gmail.com Name Email *...</p><div class="actions" style="margin-top:1rem"><a class="btn btn-secondary" href="https://annaheaner.blogspot.com/2024/08/blog-post.html" target="_blank" rel="noopener noreferrer">Open original post</a></div></div></article>
-          <article class="story"><img src="assets/images/Swiss-image-1.jpg" alt="Image for ANNA HEANER : South of France" loading="lazy" width="800" height="600" /><div class="story-body"><div class="meta">Archive feature</div><h3>ANNA HEANER : South of France</h3><p>ANNA HEANER : South of France South of France Newer Post Older Post Home Portfolio North of France People Portugal Italy Switzerland South of France Wrightsville Beach ‘25 Wrightsville Beach ‘26 Ireland For bookings and inquiries please contact...</p><div class="actions" style="margin-top:1rem"><a class="btn btn-secondary" href="https://annaheaner.blogspot.com/2024/08/south-of-france.html" target="_blank" rel="noopener noreferrer">Open original post</a></div></div></article>
-          <article class="story"><img src="assets/images/Swiss-image-1.jpg" alt="Image for ANNA HEANER : Switzerland" loading="lazy" width="800" height="600" /><div class="story-body"><div class="meta">Archive feature</div><h3>ANNA HEANER : Switzerland</h3><p>ANNA HEANER : Switzerland Switzerland Newer Post Older Post Home Portfolio North of France People Portugal Italy Switzerland South of France Wrightsville Beach ‘25 Wrightsville Beach ‘26 Ireland For bookings and inquiries please contact 2001annamarie@gmail.com Name Email *...</p><div class="actions" style="margin-top:1rem"><a class="btn btn-secondary" href="https://annaheaner.blogspot.com/2024/08/switzerland.html" target="_blank" rel="noopener noreferrer">Open original post</a></div></div></article>
-          <article class="story"><img src="assets/images/Swiss-image-1.jpg" alt="Image for ANNA HEANER : People" loading="lazy" width="800" height="600" /><div class="story-body"><div class="meta">Archive feature</div><h3>ANNA HEANER : People</h3><p>ANNA HEANER : People People Newer Post Older Post Home Portfolio North of France People Portugal Italy Switzerland South of France Wrightsville Beach ‘25 Wrightsville Beach ‘26 Ireland For bookings and inquiries please contact 2001annamarie@gmail.com Name Email *...</p><div class="actions" style="margin-top:1rem"><a class="btn btn-secondary" href="https://annaheaner.blogspot.com/2025/10/portraits.html" target="_blank" rel="noopener noreferrer">Open original post</a></div></div></article>
-          <article class="story"><img src="assets/images/Swiss-image-1.jpg" alt="Image for ANNA HEANER : Wrightsville Beach ‘25" loading="lazy" width="800" height="600" /><div class="story-body"><div class="meta">Archive feature</div><h3>ANNA HEANER : Wrightsville Beach ‘25</h3><p>ANNA HEANER : Wrightsville Beach ‘25 Wrightsville Beach ‘25 Newer Post Older Post Home Portfolio North of France People Portugal Italy Switzerland South of France Wrightsville Beach ‘25 Wrightsville Beach ‘26 Ireland For bookings and inquiries please contact...</p><div class="actions" style="margin-top:1rem"><a class="btn btn-secondary" href="https://annaheaner.blogspot.com/2025/10/wrightsville-beach.html" target="_blank" rel="noopener noreferrer">Open original post</a></div></div></article>
-          <article class="story"><img src="assets/images/Swiss-image-1.jpg" alt="Image for ANNA HEANER : Ireland" loading="lazy" width="800" height="600" /><div class="story-body"><div class="meta">Archive feature</div><h3>ANNA HEANER : Ireland</h3><p>ANNA HEANER : Ireland Ireland Newer Post Older Post Home Portfolio North of France People Portugal Italy Switzerland South of France Wrightsville Beach ‘25 Wrightsville Beach ‘26 Ireland For bookings and inquiries please contact 2001annamarie@gmail.com Name Email *...</p><div class="actions" style="margin-top:1rem"><a class="btn btn-secondary" href="https://annaheaner.blogspot.com/2026/03/ireland.html" target="_blank" rel="noopener noreferrer">Open original post</a></div></div></article>
-          <article class="story"><img src="assets/images/Swiss-image-1.jpg" alt="Image for ANNA HEANER : Wrightsville Beach ‘26" loading="lazy" width="800" height="600" /><div class="story-body"><div class="meta">Archive feature</div><h3>ANNA HEANER : Wrightsville Beach ‘26</h3><p>ANNA HEANER : Wrightsville Beach ‘26 Wrightsville Beach ‘26 Older Post Home Portfolio North of France People Portugal Italy Switzerland South of France Wrightsville Beach ‘25 Wrightsville Beach ‘26 Ireland For bookings and inquiries please contact 2001annamarie@gmail.com Name...</p><div class="actions" style="margin-top:1rem"><a class="btn btn-secondary" href="https://annaheaner.blogspot.com/2026/04/wrightsville-26.html" target="_blank" rel="noopener noreferrer">Open original post</a></div></div></article>
+          <article class="story"><img src="assets/images/IMG_2040.jpeg" alt="Image for Wrightsville Beach" loading="lazy" width="800" height="600" /><div class="story-body"><div class="meta">Archive feature</div><h3>Wrightsville Beach</h3><p>The light, the water, and the easy pace of the coast.</p></div></article>
+          <article class="story"><img src="assets/images/DSC03538.jpeg" alt="Image for Ireland" loading="lazy" width="800" height="600" /><div class="story-body"><div class="meta">Archive feature</div><h3>Ireland</h3><p>A slower landscape with room to breathe and wander.</p></div></article>
+          <article class="story"><img src="assets/images/IMG_7730.jpeg" alt="Image for People" loading="lazy" width="800" height="600" /><div class="story-body"><div class="meta">Archive feature</div><h3>People</h3><p>Portraits and encounters from the road.</p></div></article>
+          <article class="story"><img src="assets/images/IMG_8364.jpeg" alt="Image for North of France" loading="lazy" width="800" height="600" /><div class="story-body"><div class="meta">Archive feature</div><h3>North of France</h3><p>A quiet stretch of travel with wide skies and open paths.</p></div></article>
+          <article class="story"><img src="assets/images/IMG_0895.jpeg" alt="Image for Portugal" loading="lazy" width="800" height="600" /><div class="story-body"><div class="meta">Archive feature</div><h3>Portugal</h3><p>Small moments from a warmer edge of the journey.</p></div></article>
+          <article class="story"><img src="assets/images/IMG_7729.jpeg" alt="Image for Italy" loading="lazy" width="800" height="600" /><div class="story-body"><div class="meta">Archive feature</div><h3>Italy</h3><p>A place of architecture, food, and long afternoons.</p></div></article>
+          <article class="story"><img src="assets/images/IMG_6267.jpeg" alt="Image for Switzerland" loading="lazy" width="800" height="600" /><div class="story-body"><div class="meta">Archive feature</div><h3>Switzerland</h3><p>Mountain air, green hills, and a view that stays with you.</p></div></article>
+          <article class="story"><img src="assets/images/IMG_0893.jpeg" alt="Image for South of France" loading="lazy" width="800" height="600" /><div class="story-body"><div class="meta">Archive feature</div><h3>South of France</h3><p>Soft colors and the pull of the coast.</p></div></article>
+          <article class="story"><img src="assets/images/IMG_8381.jpeg" alt="Image for Notes" loading="lazy" width="800" height="600" /><div class="story-body"><div class="meta">Archive feature</div><h3>Notes</h3><p>A few more pages from the journal.</p></div></article>
         </div>
       </div>
     </section>
@@ -138,34 +162,22 @@
     <section id="gallery">
       <div class="container">
         <div class="section-head">
-          <div><div class="eyebrow">Gallery</div><h2>Image archive</h2></div>
-          <p class="section-copy">Tap any image to view it larger. These images are stored locally in the package so the site can run independently of Blogger.</p>
+          <div><div class="eyebrow">Gallery</div><h2>Photographs</h2></div>
+          <p class="section-copy">More of the archive is now available directly on the page.</p>
         </div>
         <div class="gallery">
-          <button class="gallery-item" data-image="assets/images/Swiss-image-1.jpg" aria-label="Open image 095FC020-ADC8-41AE-B4B7-5F7A19C91E5F.jpeg"><img src="assets/images/Swiss-image-1.jpg" alt="Archive image 095FC020-ADC8-41AE-B4B7-5F7A19C91E5F.jpeg" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/Swiss-image-1.jpg" aria-label="Open image 16504BF4-4D29-435A-A0D1-D2FD3955894C.jpeg"><img src="assets/images/Swiss-image-1.jpg" alt="Archive image 16504BF4-4D29-435A-A0D1-D2FD3955894C.jpeg" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/Swiss-image-1.jpg" aria-label="Open image 25F82854-19CB-43B4-821B-73055C111A2E.jpeg"><img src="assets/images/Swiss-image-1.jpg" alt="Archive image 25F82854-19CB-43B4-821B-73055C111A2E.jpeg" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/Swiss-image-1.jpg" aria-label="Open image 26A49579-F959-4232-8E47-56E8B8EB155A.jpeg"><img src="assets/images/Swiss-image-1.jpg" alt="Archive image 26A49579-F959-4232-8E47-56E8B8EB155A.jpeg" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/Swiss-image-1.jpg" aria-label="Open image 336DB078-9910-4AB6-91F5-FB7A38B3EBD0.jpeg"><img src="assets/images/Swiss-image-1.jpg" alt="Archive image 336DB078-9910-4AB6-91F5-FB7A38B3EBD0.jpeg" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/Swiss-image-1.jpg" aria-label="Open image 440F2944-43A6-4366-BD0C-87A4A252F8B9.jpeg"><img src="assets/images/Swiss-image-1.jpg" alt="Archive image 440F2944-43A6-4366-BD0C-87A4A252F8B9.jpeg" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/Swiss-image-1.jpg" aria-label="Open image 49203A1F-51A2-4672-83A7-B4838788C8B8.jpeg"><img src="assets/images/Swiss-image-1.jpg" alt="Archive image 49203A1F-51A2-4672-83A7-B4838788C8B8.jpeg" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/Swiss-image-1.jpg" aria-label="Open image 4FC90AB3-2F85-4D02-B773-21888398715F.jpeg"><img src="assets/images/Swiss-image-1.jpg" alt="Archive image 4FC90AB3-2F85-4D02-B773-21888398715F.jpeg" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/Swiss-image-1.jpg" aria-label="Open image 53B0A028-2AC1-436C-BD02-9E6DBA658594.jpeg"><img src="assets/images/Swiss-image-1.jpg" alt="Archive image 53B0A028-2AC1-436C-BD02-9E6DBA658594.jpeg" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/Swiss-image-1.jpg" aria-label="Open image 55A2789C-A540-49FB-AFEE-25D2E9270A9B.jpeg"><img src="assets/images/Swiss-image-1.jpg" alt="Archive image 55A2789C-A540-49FB-AFEE-25D2E9270A9B.jpeg" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/Swiss-image-1.jpg" aria-label="Open image 597E8DDF-79B2-4069-9D22-EC5141025DC8.jpeg"><img src="assets/images/Swiss-image-1.jpg" alt="Archive image 597E8DDF-79B2-4069-9D22-EC5141025DC8.jpeg" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/Swiss-image-1.jpg" aria-label="Open image 6FF4012F-F5FB-47ED-92E2-B51AA69889D4.jpeg"><img src="assets/images/Swiss-image-1.jpg" alt="Archive image 6FF4012F-F5FB-47ED-92E2-B51AA69889D4.jpeg" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/Swiss-image-1.jpg" aria-label="Open image 73A4F566-6655-4856-9EAB-43BAC22CA8E7.jpeg"><img src="assets/images/Swiss-image-1.jpg" alt="Archive image 73A4F566-6655-4856-9EAB-43BAC22CA8E7.jpeg" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/Swiss-image-1.jpg" aria-label="Open image 8E2F1F6D-8C5D-479D-B94F-01111B168539.jpeg"><img src="assets/images/Swiss-image-1.jpg" alt="Archive image 8E2F1F6D-8C5D-479D-B94F-01111B168539.jpeg" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/Swiss-image-1.jpg" aria-label="Open image 90E47371-44A8-45FB-B0F4-6486262C4304.jpeg"><img src="assets/images/Swiss-image-1.jpg" alt="Archive image 90E47371-44A8-45FB-B0F4-6486262C4304.jpeg" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/Swiss-image-1.jpg" aria-label="Open image 9D8A317B-0CE6-4602-976C-8F697DC6B3D8.jpeg"><img src="assets/images/Swiss-image-1.jpg" alt="Archive image 9D8A317B-0CE6-4602-976C-8F697DC6B3D8.jpeg" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/Swiss-image-1.jpg" aria-label="Open image B6544F8C-CA2F-460D-9ED7-30B46177A22D.jpeg"><img src="assets/images/Swiss-image-1.jpg" alt="Archive image B6544F8C-CA2F-460D-9ED7-30B46177A22D.jpeg" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/Swiss-image-1.jpg" aria-label="Open image B95C392E-46FE-4955-AA93-F77699909E1E.jpeg"><img src="assets/images/Swiss-image-1.jpg" alt="Archive image B95C392E-46FE-4955-AA93-F77699909E1E.jpeg" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/Swiss-image-1.jpg" aria-label="Open image BAD3819C-2257-4128-854F-4AEBF4ADF201.jpeg"><img src="assets/images/Swiss-image-1.jpg" alt="Archive image BAD3819C-2257-4128-854F-4AEBF4ADF201.jpeg" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/Swiss-image-1.jpg" aria-label="Open image BC57BB9C-44C3-4FB0-B5C6-6C17903F5C58.jpeg"><img src="assets/images/Swiss-image-1.jpg" alt="Archive image BC57BB9C-44C3-4FB0-B5C6-6C17903F5C58.jpeg" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/Swiss-image-1.jpg" aria-label="Open image C0100E9C-4429-42AC-918E-E40D5604CD01.jpeg"><img src="assets/images/Swiss-image-1.jpg" alt="Archive image C0100E9C-4429-42AC-918E-E40D5604CD01.jpeg" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/Swiss-image-1.jpg" aria-label="Open image C031D149-BD79-46DE-9547-2BA504C02AFB.jpeg"><img src="assets/images/Swiss-image-1.jpg" alt="Archive image C031D149-BD79-46DE-9547-2BA504C02AFB.jpeg" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/Swiss-image-1.jpg" aria-label="Open image CAD864C4-2FE4-4DFC-8B77-19488B6DE250.jpeg"><img src="assets/images/Swiss-image-1.jpg" alt="Archive image CAD864C4-2FE4-4DFC-8B77-19488B6DE250.jpeg" loading="lazy" width="600" height="600" /></button>
-          <button class="gallery-item" data-image="assets/images/Swiss-image-1.jpg" aria-label="Open image CD7F946D-2A27-419A-B544-FF5CD313BD6A.jpeg"><img src="assets/images/Swiss-image-1.jpg" alt="Archive image CD7F946D-2A27-419A-B544-FF5CD313BD6A.jpeg" loading="lazy" width="600" height="600" /></button>
+          <button class="gallery-item" data-image="assets/images/Swiss-image-1.jpg" aria-label="Open image Swiss-image-1.jpg"><img src="assets/images/Swiss-image-1.jpg" alt="Photograph from the journal" loading="lazy" width="600" height="600" /></button>
+          <button class="gallery-item" data-image="assets/images/IMG_2040.jpeg" aria-label="Open image IMG_2040.jpeg"><img src="assets/images/IMG_2040.jpeg" alt="Photograph from the journal" loading="lazy" width="600" height="600" /></button>
+          <button class="gallery-item" data-image="assets/images/DSC03538.jpeg" aria-label="Open image DSC03538.jpeg"><img src="assets/images/DSC03538.jpeg" alt="Photograph from the journal" loading="lazy" width="600" height="600" /></button>
+          <button class="gallery-item" data-image="assets/images/IMG_7730.jpeg" aria-label="Open image IMG_7730.jpeg"><img src="assets/images/IMG_7730.jpeg" alt="Photograph from the journal" loading="lazy" width="600" height="600" /></button>
+          <button class="gallery-item" data-image="assets/images/IMG_8364.jpeg" aria-label="Open image IMG_8364.jpeg"><img src="assets/images/IMG_8364.jpeg" alt="Photograph from the journal" loading="lazy" width="600" height="600" /></button>
+          <button class="gallery-item" data-image="assets/images/IMG_0895.jpeg" aria-label="Open image IMG_0895.jpeg"><img src="assets/images/IMG_0895.jpeg" alt="Photograph from the journal" loading="lazy" width="600" height="600" /></button>
+          <button class="gallery-item" data-image="assets/images/IMG_7729.jpeg" aria-label="Open image IMG_7729.jpeg"><img src="assets/images/IMG_7729.jpeg" alt="Photograph from the journal" loading="lazy" width="600" height="600" /></button>
+          <button class="gallery-item" data-image="assets/images/IMG_6267.jpeg" aria-label="Open image IMG_6267.jpeg"><img src="assets/images/IMG_6267.jpeg" alt="Photograph from the journal" loading="lazy" width="600" height="600" /></button>
+          <button class="gallery-item" data-image="assets/images/IMG_0893.jpeg" aria-label="Open image IMG_0893.jpeg"><img src="assets/images/IMG_0893.jpeg" alt="Photograph from the journal" loading="lazy" width="600" height="600" /></button>
+          <button class="gallery-item" data-image="assets/images/IMG_8381.jpeg" aria-label="Open image IMG_8381.jpeg"><img src="assets/images/IMG_8381.jpeg" alt="Photograph from the journal" loading="lazy" width="600" height="600" /></button>
+          <button class="gallery-item" data-image="assets/images/IMG_8348.jpeg" aria-label="Open image IMG_8348.jpeg"><img src="assets/images/IMG_8348.jpeg" alt="Photograph from the journal" loading="lazy" width="600" height="600" /></button>
+          <button class="gallery-item" data-image="assets/images/IMG_8355.jpeg" aria-label="Open image IMG_8355.jpeg"><img src="assets/images/IMG_8355.jpeg" alt="Photograph from the journal" loading="lazy" width="600" height="600" /></button>
         </div>
       </div>
     </section>
@@ -173,17 +185,11 @@
     <section id="archive">
       <div class="container archive">
         <div class="eyebrow">Archive links</div>
-        <h2>Discovered source posts</h2>
+        <h2>From the journal</h2>
         <ul>
-          <li><a href="https://annaheaner.blogspot.com/2024/04/portugal.html" target="_blank" rel="noopener noreferrer">Portugal.Html</a></li>
-          <li><a href="https://annaheaner.blogspot.com/2024/04/west-of-france.html" target="_blank" rel="noopener noreferrer">West Of France.Html</a></li>
-          <li><a href="https://annaheaner.blogspot.com/2024/08/blog-post.html" target="_blank" rel="noopener noreferrer">Blog Post.Html</a></li>
-          <li><a href="https://annaheaner.blogspot.com/2024/08/south-of-france.html" target="_blank" rel="noopener noreferrer">South Of France.Html</a></li>
-          <li><a href="https://annaheaner.blogspot.com/2024/08/switzerland.html" target="_blank" rel="noopener noreferrer">Switzerland.Html</a></li>
-          <li><a href="https://annaheaner.blogspot.com/2025/10/portraits.html" target="_blank" rel="noopener noreferrer">Portraits.Html</a></li>
-          <li><a href="https://annaheaner.blogspot.com/2025/10/wrightsville-beach.html" target="_blank" rel="noopener noreferrer">Wrightsville Beach.Html</a></li>
-          <li><a href="https://annaheaner.blogspot.com/2026/03/ireland.html" target="_blank" rel="noopener noreferrer">Ireland.Html</a></li>
-          <li><a href="https://annaheaner.blogspot.com/2026/04/wrightsville-26.html" target="_blank" rel="noopener noreferrer">Wrightsville 26.Html</a></li>
+          <li><a href="#" target="_blank" rel="noopener noreferrer">Wrightsville Beach</a></li>
+          <li><a href="#" target="_blank" rel="noopener noreferrer">Ireland</a></li>
+          <li><a href="#" target="_blank" rel="noopener noreferrer">People</a></li>
         </ul>
       </div>
     </section>
@@ -191,7 +197,7 @@
 
   <footer class="site-footer">
     <div class="container footer-row">
-      <div><strong>Anna Heaner</strong><div class="eyebrow" style="margin-top:.4rem">Rebuilt for public web access</div></div>
+      <div><strong>Anna Heaner</strong><div class="eyebrow" style="margin-top:.4rem">Travel journal</div></div>
       <a class="btn btn-secondary" href="#top">Back to top</a>
     </div>
   </footer>
@@ -209,29 +215,29 @@
       const toggle = document.querySelector('[data-theme-toggle]');
       let theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
       root.setAttribute('data-theme', theme);
-      toggle.addEventListener('click', () => {{
+      toggle.addEventListener('click', () => {
         theme = theme === 'dark' ? 'light' : 'dark';
         root.setAttribute('data-theme', theme);
-      }});
+      });
 
       const lightbox = document.getElementById('lightbox');
       const lightboxImage = document.getElementById('lightboxImage');
       const closeBtn = document.getElementById('lightboxClose');
-      document.querySelectorAll('.gallery-item').forEach(btn => {{
-        btn.addEventListener('click', () => {{
+      document.querySelectorAll('.gallery-item').forEach(btn => {
+        btn.addEventListener('click', () => {
           lightboxImage.src = btn.dataset.image;
           lightbox.classList.add('open');
           lightbox.setAttribute('aria-hidden', 'false');
-        }});
-      }});
-      closeBtn.addEventListener('click', () => {{
+        });
+      });
+      closeBtn.addEventListener('click', () => {
         lightbox.classList.remove('open');
         lightbox.setAttribute('aria-hidden', 'true');
         lightboxImage.src = '';
-      }});
-      lightbox.addEventListener('click', (e) => {{
+      });
+      lightbox.addEventListener('click', (e) => {
         if (e.target === lightbox) closeBtn.click();
-      }});
+      });
     }());
   </script>
 </body>
